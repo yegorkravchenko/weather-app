@@ -1,4 +1,126 @@
+$menu-primary: #06070B;
+$menu-secondary: #787878;
+$main-primary: #2D3638;
+$main-secondary: rgba(45, 54, 56, 0.6);
+$fonts: 'Inter', Helvetica, Arial, sans-serif;
+
 * {
     margin: 0;
     padding: 0;
+}
+
+:root {
+    font-family: $fonts;
+    font-size: 10px;
+}
+
+body {
+    background: linear-gradient(230.01deg, #28E2CE -2.24%, #26ADA0 160.22%);
+}
+
+.menu {
+    background-color: #fff;
+    height: 100vh;
+    width: 370px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__logo {
+        color: $menu-primary;
+        font-size: 3.6rem;
+        font-weight: 800;
+        margin-top: 65px;
+        text-transform: uppercase;
+    }
+
+    &__subtitle {
+        color: $menu-secondary;
+        font-size: 1.8rem;
+        font-weight: 500;
+        margin-top: 5px;
+    }
+
+    &__search-box {
+        margin-top: 50px;
+    }
+
+    &__last-searches {
+        margin-top: 55px;
+    }
+}
+
+.search-box {
+    background-color: #EDEDED;
+    border-radius: 7px;
+    box-shadow: 0px 0px 35px -7px rgba(0, 0, 0, 0.1);
+    height: 40px;
+    width: 80%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__input {
+        background-color: unset;
+        border: 0;
+        color: $main-primary;
+        font-size: 1.4rem;
+        margin: 0 5px 0 10px;
+        width: 100%;
+        outline: 0;
+    }
+
+    &__icon {
+        font-family: $fonts;
+        height: 18px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+}
+
+.last-searches {
+    
+    &__hr {
+        width: 320px;
+        border: 1px solid rgba(6, 7, 11, 0.16);
+    }
+
+    &__title {
+        color: $menu-primary;
+        font-size: 2.4rem;
+        font-weight: 700;
+        margin: 15px 15px;
+    }
+
+    &__list {
+        margin: 25px 40px;
+        list-style-image: url('../imgs/lastsearch_icon.svg');
+    }
+
+    &__list-item {
+        color: $main-primary;
+        font-size: 1.8rem;
+        font-weight: 500;
+        margin-bottom: 15px;
+        cursor: pointer;
+
+        &:hover {
+            font-weight: 700;
+        }
+
+        &--country {
+            color: $main-secondary;
+            font-weight: 400;
+        }
+    }
+}
+
+.main {
+    margin-left: 370px;
 }

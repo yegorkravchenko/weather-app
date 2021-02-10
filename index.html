@@ -5,10 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <title>Weather App</title>
 </head>
 <body>
-    <!-- Hello, World! -->
+    <section class="menu">
+        <h1 class="menu__logo">Weather?</h1>
+        <p class="menu__subtitle">Lorem ipsum dolor</p>
+
+        <div class="menu__search-box search-box">
+            <input type="text" class="search-box__input" placeholder="Location">
+            <img class="search-box__icon" src="./imgs/search_icon.svg" alt="">
+        </div>
+
+        <div class="menu__last-searches last-searches">
+            <hr class="last-searches__hr">
+            <h2 class="last-searches__title">Last searches</h2>
+            <ul class="last-searches__list">
+                <li class="last-searches__list-item">
+                    Los Angeles<span class="last-searches__list-item--country">, USA</span>
+                </li>
+                <li class="last-searches__list-item">
+                    Milan<span class="last-searches__list-item--country">, Italy</span>
+                </li>
+                <li class="last-searches__list-item">
+                    San Francisco<span class="last-searches__list-item--country">, USA</span>
+                </li>
+                <li class="last-searches__list-item">
+                    Bruxelles<span class="last-searches__list-item--country">, Belgium</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <main class="main">
+        <p>hell0, w0rld!</p>
+    </main>
 
     <script src="./app.js"></script>
 </body>
