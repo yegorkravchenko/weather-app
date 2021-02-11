@@ -40,7 +40,28 @@
     </section>
     
     <main class="main">
-        <p>hell0, w0rld!</p>
+        <div class="main__location location">
+            <img src="./imgs/loc_icon.svg" alt="" class="location__icon">
+            <p class="location__city">Kyiv</p>
+            <p class="location__country">Ukraine</p>
+        </div>
+        <img src="./imgs/clouds_icon.svg" alt="" class="main__img">
+        <div class="main__info-box info-box">
+            <p class="info-box__date">Mon, 15 Aug</p>
+            <p class="info-box__main">Clouds</p>
+            <p class="info-box__temp">28 &deg;C</p>
+            <p class="info-box__description">Scattered clouds: 25-50%</p>
+            <ul class="info-box__params">
+                <li class="info-box__parameter parameter">
+                    <img src="./imgs/wind_icon.svg" alt="" class="parameter__icon">
+                    <span class="parameter__data">4 km/h</span>
+                </li>
+                <li class="info-box__parameter parameter">
+                    <img src="./imgs/hum_icon.svg" alt="" class="parameter__icon">
+                    <span class="parameter__data">47 %</span>
+                </li>
+            </ul>
+        </div>
     </main>
 
     <script src="./app.js"></script>
