@@ -86,7 +86,6 @@ body {
 }
 
 .last-searches {
-    
     &__hr {
         width: 320px;
         border: 1px solid #EDEDED;
@@ -268,6 +267,35 @@ body {
     .main {
         &__img {
             height: 180px;
+            margin-top: 30px;
+        }
+
+        &__location {
+            margin-top: 30px;
+        }
+    }
+
+    .location {
+        &__icon {
+            height: 18px;
+        }
+
+        &__city {
+            font-size: 1.8rem;
+            margin-top: 0px;
+        }
+
+        &__country {
+            font-size: 1.4rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .menu {
+        &__logo {
+            font-size: 1.8rem;
+            margin: 0 25px 0 20px;
         }
     }
 
@@ -275,14 +303,5 @@ body {
         border-radius: 0;
         margin-bottom: 0;
         width: 100vw;
-    }
-}
-
-@media only screen and (max-width: 350px) {
-    .menu {
-        &__logo {
-            font-size: 1.8rem;
-            margin: 0 25px 0 20px;
-        }
     }
 }

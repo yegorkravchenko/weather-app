@@ -283,18 +283,32 @@ body {
 @media only screen and (max-width: 500px) {
   .main__img {
     height: 180px;
+    margin-top: 30px;
+  }
+  .main__location {
+    margin-top: 30px;
+  }
+  .location__icon {
+    height: 18px;
+  }
+  .location__city {
+    font-size: 1.8rem;
+    margin-top: 0px;
+  }
+  .location__country {
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .menu__logo {
+    font-size: 1.8rem;
+    margin: 0 25px 0 20px;
   }
   .info-box {
     border-radius: 0;
     margin-bottom: 0;
     width: 100vw;
-  }
-}
-
-@media only screen and (max-width: 350px) {
-  .menu__logo {
-    font-size: 1.8rem;
-    margin: 0 25px 0 20px;
   }
 }
 /*# sourceMappingURL=styles.css.map */
