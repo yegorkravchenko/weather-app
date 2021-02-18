@@ -19,6 +19,7 @@ async function getData(location) {
         const data = await response.json();
         const processedData = processData(data);
         displayData(processedData);
+        resetInput(searchInput);
     } catch (error) {
         console.error('Fetching error ->', error);
     }
@@ -36,6 +37,11 @@ function processData(data) {
     };
     object.weather.id = (data.weather[0].main === 'Clear' ? 9 : parseInt((data.weather[0].id).toString().split('')[0]));
     return object;
+}
+
+function resetInput(input) {
+    input.value = '';
+    input.blur();
 }
 
 function changeUI(gradient, iconSrc) {
