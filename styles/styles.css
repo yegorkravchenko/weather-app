@@ -9,7 +9,7 @@
 }
 
 body {
-  background: linear-gradient(230.01deg, #28E2CE -2.24%, #26ADA0 160.22%);
+  background: #EDEDED;
   min-height: 100vh;
 }
 
@@ -43,7 +43,7 @@ body {
 
 .menu__subtitle {
   color: #787878;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 500;
   margin-top: 5px;
 }
@@ -125,11 +125,28 @@ body {
   font-weight: 400;
 }
 
+.start-overlay {
+  margin: 0 0 50px 370px;
+  text-align: center;
+}
+
+.start-overlay__icon {
+  height: 120px;
+  opacity: 0.7;
+  margin-top: 370px;
+}
+
+.start-overlay__msg {
+  margin-top: 20px;
+  color: #787878;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: calc(1.8rem * 1.6);
+}
+
 .main {
   margin-left: 370px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -274,6 +291,12 @@ body {
   }
   .search-box__icon {
     height: 14px;
+  }
+  .start-overlay {
+    margin-left: 0;
+  }
+  .start-overlay__icon {
+    margin-top: 130px;
   }
   .main {
     margin: 0;

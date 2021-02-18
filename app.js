@@ -2,6 +2,8 @@ const body = document.body;
 const searchInput = document.querySelector('.search-box__input');
 const searchIcon = document.querySelector('.search-box__icon');
 const weatherIcon = document.querySelector('.main__img');
+const overlay = document.querySelector('.start-overlay');
+const mainSection = document.querySelector('.main');
 
 const city = document.querySelector('.location__city');
 const country = document.querySelector('.location__country');
@@ -93,6 +95,9 @@ function displayData(weatherData) {
     infoDesc.textContent = (weatherData.weather.description).charAt(0).toUpperCase() + (weatherData.weather.description).slice(1);
     infoWind.textContent = `${Math.round(weatherData.wind)} km/h`;
     infoHum.textContent = `${weatherData.humidity}%`;
+
+    overlay.style.display = 'none';
+    mainSection.style.display = 'flex';
 }
 
 function inputSubmit(e) {
