@@ -78,7 +78,7 @@ function displayData(weatherData) {
     const days = ['Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'];
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
     const currentDate = new Date();
-    infoDate.textContent = `${days[currentDate.getDay()]}, ${currentDate.getDate()} ${months[currentDate.getMonth()]}`;
+    infoDate.textContent = `${days[currentDate.getDay() - 1]}, ${currentDate.getDate()} ${months[currentDate.getMonth()]}`;
 
     city.textContent = weatherData.city;
     country.textContent = weatherData.country;
