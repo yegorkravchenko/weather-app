@@ -111,3 +111,9 @@ searchInput.addEventListener('keydown', e => {
         inputSubmit(e);
     }
 });
+
+window.addEventListener('keydown', e => {
+    if (e.keyCode === 13) {
+        searchInput.focus();
+    }
+});
