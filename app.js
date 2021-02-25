@@ -14,6 +14,12 @@ const [infoDate, infoMain, infoTemp, infoDesc] = info;
 const params = document.querySelectorAll('.parameter__data');
 const [infoWind, infoHum] = params;
 
+const lastSearchesBox = document.querySelector('.last-searches');
+const lastSearchesList = document.querySelector('.last-searches__list');
+// const lastSearchesItems = document.querySelectorAll('.last-searches__list-item');
+
+const lastSearchesArr = [];
+
 async function getData(location) {
     try {
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=eb0308ac37205e4215288756bee1d255`;
@@ -21,6 +27,8 @@ async function getData(location) {
         const data = await response.json();
         const processedData = processData(data);
         displayData(processedData);
+        updateStorage(processedData);
+        renderLastSearches();
         resetInput(searchInput);
     } catch (error) {
         console.error('Fetching error ->', error);
@@ -41,6 +49,27 @@ function processData(data) {
     return object;
 }
 
+function updateStorage(weatherData) {
+    if (lastSearchesArr.length < 5) {
+        lastSearchesArr.unshift(weatherData);
+    } else {
+        lastSearchesArr.unshift(weatherData);
+        lastSearchesArr.splice(-1, 1);
+    }
+    localStorage.setItem('lastSearches', JSON.stringify(lastSearchesArr));
+}
+
+function renderLastSearches() {
+    lastSearchesList.innerHTML = '';
+    lastSearchesArr.forEach((item, index) => {
+        const search = document.createElement('li');
+        search.setAttribute('data-index', index);
+        search.setAttribute('class', 'last-searches__list-item');
+        search.innerHTML = `${item.city}<span class="last-searches__list-item--country">, ${item.country}</span>`;
+        lastSearchesList.appendChild(search);
+    });
+}
+ 
 function resetInput(input) {
     input.value = '';
     input.blur();
@@ -112,8 +141,20 @@ searchInput.addEventListener('keydown', e => {
     }
 });
 
+// lastSearchesItems.forEach(item => item.addEventListener('click'), (e) => {
+
+// });
+
 window.addEventListener('keydown', e => {
     if (e.keyCode === 13) {
         searchInput.focus();
     }
+});
+
+window.addEventListener('load', () => {
+    const lastSearchesLocalStorage = localStorage.getItem('lastSearches');
+    if (lastSearchesLocalStorage) {
+        JSON.parse(lastSearchesLocalStorage).forEach(obj => lastSearchesArr.push(obj));
+    }
+    renderLastSearches();
 });
