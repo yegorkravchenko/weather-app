@@ -59,6 +59,7 @@ function updateStorage(weatherData) {
 }
 
 function renderLastSearches() {
+    lastSearchesBox.style.display = 'block';
     lastSearchesList.innerHTML = '';
     lastSearchesArr.forEach((item, index) => {
         const search = document.createElement('li');
@@ -160,6 +161,8 @@ window.addEventListener('load', () => {
     const lastSearchesLocalStorage = localStorage.getItem('lastSearches');
     if (lastSearchesLocalStorage) {
         JSON.parse(lastSearchesLocalStorage).forEach(obj => lastSearchesArr.push(obj));
+        renderLastSearches();
+    } else {
+        lastSearchesBox.style.display = 'none';
     }
-    renderLastSearches();
 });
