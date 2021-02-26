@@ -16,7 +16,6 @@ const [infoWind, infoHum] = params;
 
 const lastSearchesBox = document.querySelector('.last-searches');
 const lastSearchesList = document.querySelector('.last-searches__list');
-// const lastSearchesItems = document.querySelectorAll('.last-searches__list-item');
 
 const lastSearchesArr = [];
 
@@ -134,16 +133,22 @@ function inputSubmit(e) {
     getData(searchInput.value);
 }
 
+lastSearchesListObserver = new MutationObserver(() => {
+    const lastSearchesItems = document.querySelectorAll('.last-searches__list-item');
+
+    lastSearchesItems.forEach(item => item.addEventListener('click', () => {
+        getData(item.textContent);
+    }));
+});
+
+lastSearchesListObserver.observe(lastSearchesList, { childList: true });
+
 searchIcon.addEventListener('click', inputSubmit);
 searchInput.addEventListener('keydown', e => {
     if (e.keyCode === 13) {
         inputSubmit(e);
     }
 });
-
-// lastSearchesItems.forEach(item => item.addEventListener('click'), (e) => {
-
-// });
 
 window.addEventListener('keydown', e => {
     if (e.keyCode === 13) {
